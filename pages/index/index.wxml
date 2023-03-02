@@ -1,0 +1,20 @@
+<view class="page-body">
+    <view class="page-body-wrapper">
+        <view class="cameraBox">
+            <camera wx:if="{{!src}}" device-position="{{position}}" flash="off" binderror="error" mode="normal" style="width: {{screenWidth}}px; height: 100vh;"></camera>
+            <view style="width: 100%">
+                <canvas wx:if="{{src}}" style="width: {{414}}px; height: {{500}}px;" canvas-id="firstCanvas"></canvas>
+            </view>
+            <view class="word">
+                <view>时间：{{nowTime}}</view>
+                <view>地点：{{address}}</view>
+                <view>姓名：{{stuName}}</view>
+                <view>学号：{{stuNo}}</view>
+                <view>科目：{{subject}}</view>
+            </view>
+        </view>
+        <view class="photo" wx:if="{{isPhoto}}">
+            <view class="btn" bindtap="takePhoto"></view>
+        </view>
+    </view>
+</view>
